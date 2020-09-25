@@ -154,8 +154,7 @@ dmypy.json
 # End of https://www.toptal.com/developers/gitignore/api/django
 /users/pictures/
 
-
-# Only for Development only
+# django migrations
 **/migrations/**
 !**/migrations
 !**/migrations/__init__.py
