@@ -23,3 +23,4 @@ class Post(models.Model):
         """
 
         return f'{self.title} by @{self.user.username}'
+      
