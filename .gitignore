@@ -158,3 +158,10 @@ dmypy.json
 **/migrations/**
 !**/migrations
 !**/migrations/__init__.py
+
+#Media directory.
+media/*
+!media/readme.txt
+
+# Static directory.
+static/*
