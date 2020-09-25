@@ -153,3 +153,15 @@ dmypy.json
 
 # End of https://www.toptal.com/developers/gitignore/api/django
 /users/pictures/
+
+# django migrations
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
+
+#Media directory.
+media/*
+!media/readme.txt
+
+# Static directory.
+static/*
