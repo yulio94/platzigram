@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'platzigram.middleware.ProfileCompletionMiddleware',
 ]
 
 ROOT_URLCONF = 'platzigram.urls'
@@ -115,8 +116,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+# Static's directory and url.
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'static'
+STATICFILES_DIRS = ((BASE_DIR / 'static'),)
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
 
+# Media's directory and url.
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+# Login's url.
+LOGIN_URL = '/users/login/'
