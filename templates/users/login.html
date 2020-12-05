@@ -7,7 +7,7 @@
 {% block container %}
 
 
-    <form method="POST" action="{% url "login" %}">
+    <form method="POST" action="{% url "users:login" %}">
         {% csrf_token %}
 
         <div class="form-group">
@@ -17,11 +17,13 @@
         <div class="form-group">
             <input class="form-control" type="password" placeholder="Password" name="password"/>
         </div>
-        {% if error %}
-            <p class="alert alert-danger">{{ error }}</p>
+        {% if form.errors %}
+            <p class="alert alert-danger">Your username or password don't match</p>
         {% endif %}
 
         <button class="btn btn-primary btn-block mt-5" type="submit">Sign In</button>
+
+        <p class="mt-4"> Don't have an account ye? <a href="{% url 'users:signup' %}">Sign up here</a></p>
     </form>
 
 {% endblock %}
